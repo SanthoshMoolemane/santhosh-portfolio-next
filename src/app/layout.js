@@ -1,29 +1,31 @@
+import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Navbar from "../components/NavBar";
+import React from "react";
+
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
 
 export const metadata = {
   title: "My Portfolio",
-  description: "Showcasing my projects and skills",
+  description: "Showcasing my skills and projects",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>
-        <nav className="bg-blue-500 text-white p-4 flex justify-center space-x-4">
-          <a href="/" className="hover:underline">
-            Home
-          </a>
-          <a href="/about" className="hover:underline">
-            About
-          </a>
-          <a href="/projects" className="hover:underline">
-            Projects
-          </a>
-          <a href="/contact" className="hover:underline">
-            Contact
-          </a>
-        </nav>
-        {children}
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
+        <Navbar />
+        <main>{children}</main>
       </body>
     </html>
   );

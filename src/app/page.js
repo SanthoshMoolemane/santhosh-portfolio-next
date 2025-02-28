@@ -1,25 +1,25 @@
 "use client";
 import React from "react";
-// import Hero from "./hero/page";
-// import Skills from "./skills/page";
+import About from "./about/page"
+import Skills from "./skills/page";
 import Projects from "./projects/page";
 import ContactUs from "./contact/page";
 
 export default function Home() {
   return (
     <div className="min-h-screen snap-y snap-mandatory overflow-y-scroll">
-      {/* <section
-        id="hero"
+      <section
+        id="intro"
         className="snap-start flex items-center justify-center"
       >
-        <Hero />
+        <About />
       </section>
       <section
         id="skills"
         className="snap-start flex items-center justify-center"
       >
         <Skills />
-      </section> */}
+      </section>
       <section
         id="projects"
         className="snap-start flex items-center justify-center"
