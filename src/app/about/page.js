@@ -63,18 +63,18 @@ const Hero = () => {
               Hi, I&apos;m{" "}
               <span className="text-blue-600 dark:text-blue-400">Santhosh</span>
             </h1>
-            <h2 className="text-2xl md:text-3xl font-semibold text-gray-700 dark:text-gray-300">
+            <h2 className="text-xl md:text-3xl font-semibold text-gray-700 dark:text-gray-300">
               {text}
               <span className="animate-blink">|</span>
             </h2>
           </div>
-          <Image
-            src="/Santhosh-portfolio/images/hero.png"
-            alt="Hero"
-            width="120"
-            height="120"
-            className="w-44 h-44 rounded-full ml-6 sm:ml-8 sm:w-52 sm:h-52"
-          />
+          <div className="gif-container">
+            <img
+              src="/gifs/video2.gif"
+              alt="Description of GIF"
+              width="400px"
+            />
+          </div>
         </div>
 
         <p className="max-w-2xl text-lg md:text-xl text-gray-600 dark:text-gray-400 mb-12 animate-fade-in animation-delay-600">
