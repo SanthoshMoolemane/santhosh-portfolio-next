@@ -1,0 +1,136 @@
+.navbar {
+    width: 100%;
+    background: linear-gradient(to bottom right, #111827, #1e3a8a);
+    padding: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    position: relative;
+}
+
+.nav-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    position: fixed;
+    top: 20px;
+    left: 40px;
+    z-index: 1000;
+}
+
+.nav-title:hover {
+    transform: scale(1.1);
+}
+
+.nav-links {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 40px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    transition: transform 0.3s ease, color 0.3s ease;
+    font-size: 1.24rem;
+}
+
+.nav-links a:hover {
+    transform: scale(1.2);
+    color: #60A5FA;
+}
+
+/* Keep Contact Me Button on the Right */
+.contact-button {
+    margin-left: auto;
+    margin-right: 80px;
+    background-color: #2563eb;
+    padding: 8px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: white;
+    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+.contact-button:hover {
+    transform: scale(1.1);
+    background-color: #1e40af;
+    color: #93c5fd;
+}
+
+/* Mobile Menu */
+.hamburger {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    position: absolute;
+    right: 20px; 
+}
+
+/* Mobile Overlay Menu */
+.overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 250px;
+    height: 100%;
+    background-color: rgba(17, 24, 39, 0.95);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 1000;
+}
+
+.overlay.active {
+    transform: translateX(0);
+}
+
+.overlay a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.overlay a:hover {
+    transform: scale(1.2);
+    color: #60A5FA;
+}
+
+.close-icon {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .nav-links, .contact-button {
+        display: none;
+    }
+    .hamburger {
+        display: block;
+        right: 20px;
+    }
+    .nav-title {
+        left: 20px;
+    }
+    .navbar {
+        display: flex;  
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        min-height: 60px;  
+        padding: 10px 20px;
+    }
+
+}

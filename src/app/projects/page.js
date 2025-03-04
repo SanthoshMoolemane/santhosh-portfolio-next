@@ -31,7 +31,7 @@ const projects = [
 
 const ProjectCard = ({ project }) => {
   return (
-    <article className="relative flex flex-col items-start justify-between p-4 rounded-xl shadow-lg transition-all hover:shadow-2xl bg-white/10 backdrop-blur-lg border border-white/20 hover:scale-105 hover:border-white transition-transform duration-300">
+    <article className="relative flex flex-col items-center text-center justify-between p-4 rounded-xl shadow-lg transition-all hover:shadow-2xl bg-white/10 backdrop-blur-lg border border-white/20 hover:scale-105 hover:border-white transition-transform duration-300">
       <div className="relative w-full overflow-hidden rounded-md">
         <Image
           src={`/images/${project.imageUrl}`}
@@ -44,13 +44,19 @@ const ProjectCard = ({ project }) => {
         />
       </div>
 
-      <h3 className="mt-4 text-lg font-semibold text-white">{project.title}</h3>
+      <h3 className="mt-4 text-lg font-semibold text-white text-center">
+        {project.title}
+      </h3>
 
       <p className="mt-2 text-sm text-gray-300 line-clamp-3">
         {project.description}
       </p>
 
-      <a href={project.projectLink} className="mt-4" target="_blank">
+      <a
+        href={project.projectLink}
+        className="mt-4 flex justify-center w-full"
+        target="_blank"
+      >
         <button
           type="button"
           className="flex items-center gap-2 rounded-lg bg-indigo-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 transition-all"

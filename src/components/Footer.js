@@ -1,6 +1,7 @@
 "use client";
 
 import { Facebook, Instagram, Twitter } from "lucide-react";
+import "../styles/Footer.css";
 
 const navigation = {
   social: [
@@ -12,26 +13,23 @@ const navigation = {
 
 export default function FooterSection() {
   return (
-    <footer className="w-full bg-gradient-to-br from-gray-900 to-blue-900 p-6 shadow-md">
-      <div className="lg:px-8">
-        <div className="flex justify-center items-center gap-8 py-6 mb-2">
+    <footer className="footer">
+      <div className="footer-content">
+        <div className="social-icons">
           {navigation.social.map((item) => (
             <a
               key={item.name}
               href={item.href}
-              className="group"
+              className="social-link"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <item.icon
-                className="h-10 w-10 text-gray-400 transition-transform duration-300 ease-in-out transform group-hover:scale-150 group-hover:text-blue-500"
-                aria-hidden="true"
-              />
+              <item.icon className="icon" aria-hidden="true" />
             </a>
           ))}
         </div>
 
-        <p className="text-center text-sm text-gray-400">
+        <p className="footer-text">
           &copy; 2025 Built by Santhosh Moolemane
         </p>
       </div>

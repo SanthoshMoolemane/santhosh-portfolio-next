@@ -9,7 +9,7 @@ const roles = [
   "Back End Developer",
 ];
 
-const Hero = () => {
+const About = () => {
   const [roleIndex, setRoleIndex] = useState(0);
   const [text, setText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
@@ -63,7 +63,7 @@ const Hero = () => {
               Hi, I&apos;m{" "}
               <span className="text-blue-600 dark:text-blue-400">Santhosh</span>
             </h1>
-            <h2 className="text-xl md:text-3xl font-semibold text-gray-700 dark:text-gray-300">
+            <h2 className="text-l md:text-3xl font-semibold text-gray-700 dark:text-gray-300">
               {text}
               <span className="animate-blink">|</span>
             </h2>
@@ -78,9 +78,10 @@ const Hero = () => {
         </div>
 
         <p className="max-w-2xl text-lg md:text-xl text-gray-600 dark:text-gray-400 mb-12 animate-fade-in animation-delay-600">
-          I specialize in frontend development with React and Next and backend
-          development with Node and Express. Passionate about building scalable,
-          responsive web applications and creating intuitive user experiences.
+          I specialize in frontend development using React and Next.js, as well
+          as backend development with Node.js and Express. I am dedicated to
+          building scalable, responsive web applications and crafting seamless,
+          user-friendly experiences.
         </p>
 
         {/* Stats Section */}
@@ -88,14 +89,14 @@ const Hero = () => {
           <Stat
             icon={Code}
             label="Projects Completed"
-            value="3+"
+            value="12+"
             description="Many more to come"
           />
           <Stat
             icon={Briefcase}
             label="Years of Experience"
             value="7+"
-            description="Constantly learning & growing"
+            description="Consistent learning"
           />
           <Stat
             icon={MapPin}
@@ -149,4 +150,4 @@ const Button = ({ children, href, variant = "primary", ...props }) => {
   );
 };
 
-export default Hero;
+export default About;

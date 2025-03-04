@@ -1,64 +1,57 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import React, { useState, useEffect } from "react";
-
-const navLinks = [
-  { name: "About", path: "#about" },
-  { name: "Skills", path: "#skills" },
-  { name: "Projects", path: "#projects" },
-  { name: "Contact", path: "#contact" },
-];
+import { Menu, X, BookOpen } from "lucide-react";
+import "../styles/NavBar.css";
 
 export default function Navbar() {
-  const pathname = usePathname();
-  const [mobileView, setMobileView] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth >= 1024) {
-        setMobileView(false);
-      } else {
-        setMobileView(true);
-      }
-    };
-
-    handleResize();
-    window.addEventListener("resize", handleResize);
-
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
 
   return (
-    <nav className="w-full bg-gradient-to-br from-gray-900 to-blue-900 p-4 shadow-md">
-      <div className="max-w-6xl mx-auto flex items-center justify-between px-4 lg:px-0">
-        <Link
-          href="/"
-          className="text-white text-xl font-bold"
-          style={{ marginLeft: mobileView ? "0px" : "150px" }}
-        >
-          My Portfolio
+    <nav className="navbar">
+
+      <div className="nav-title">
+        <Link href="#">
+          <BookOpen size={28} />
         </Link>
-        <ul className="flex gap-x-4 lg:gap-x-8">
-          {navLinks.map(({ name, path }) => (
-            <li key={path}>
-              <Link
-                href={path}
-                className={`text-white text-lg ${
-                  pathname === path ? "font-bold border-b-2 border-white" : ""
-                }`}
-                onMouseEnter={(e) =>
-                  (e.target.style.textDecoration = "underline")
-                }
-                onMouseLeave={(e) => (e.target.style.textDecoration = "none")}
-                style={{ marginRight: mobileView ? "0px" : "30px" }}
-              >
-                {name}
-              </Link>
-            </li>
-          ))}
-        </ul>
+      </div>
+
+
+      <div className="nav-links">
+        <Link href="#about">About</Link>
+        <Link href="#skills">Skills</Link>
+        <Link href="#projects">Projects</Link>
+      </div>
+
+      <Link href="#contact" className="contact-button">
+        Contact Me
+      </Link>
+
+      {/* Hamburger Icon (Mobile) */}
+      <div className="hamburger" onClick={toggleMenu}>
+        <Menu size={32} />
+      </div>
+
+      {/* Mobile Overlay Menu */}
+      <div className={`overlay ${isOpen ? "active" : ""}`}>
+        <X className="close-icon" onClick={toggleMenu} size={32} />
+        <Link href="#about" onClick={toggleMenu}>
+          About
+        </Link>
+        <Link href="#skills" onClick={toggleMenu}>
+          Skills
+        </Link>
+        <Link href="#projects" onClick={toggleMenu}>
+          Projects
+        </Link>
+        <Link href="#contact" onClick={toggleMenu}>
+          Contact Me
+        </Link>
       </div>
     </nav>
   );
