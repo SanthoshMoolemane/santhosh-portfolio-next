@@ -5,20 +5,19 @@ import Image from "next/image";
 const projects = [
   {
     id: 1,
+    title: "Expense Tracker",
+    description:
+      "Track all your expenses with ease to better manage your finances.",
+    imageUrl: "expenseTracker.webp",
+    projectLink: "https://santhoshmoolemane.github.io/expenseTrackerApp/",
+  },
+  {
+    id: 2,
     title: "Foodie Delight",
     description:
       "Foodie Delight is an online cloud kitchen interface. Built with React and a love for food.",
     imageUrl: "foodieDelight.webp",
     projectLink: "https://santhoshmoolemane.github.io/foodieDelight/",
-  },
-  {
-    id: 2,
-    title: "Expense Tracker",
-    description:
-      "Track all your expenses with ease to better manage your finances.",
-    imageUrl: "expenseTracker.webp",
-    projectLink:
-      "https://github.com/SanthoshMoolemane/expenseTrackerApp.github.io",
   },
   {
     id: 3,
