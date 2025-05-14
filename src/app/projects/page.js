@@ -9,7 +9,7 @@ const projects = [
     description:
       "Foodie Delight is an online cloud kitchen interface. Built with React and a love for food.",
     imageUrl: "foodieDelight.webp",
-    projectLink: "https://github.com/SanthoshMoolemane/foodieDelight",
+    projectLink: "https://santhoshmoolemane.github.io/foodieDelight/",
   },
   {
     id: 2,
@@ -25,7 +25,7 @@ const projects = [
     title: "Blog",
     description: "A blog to store all your favorite news and articles.",
     imageUrl: "blog.webp",
-    projectLink: "https://github.com/SanthoshMoolemane/blog-app",
+    projectLink: "https://santhoshmoolemane.github.io/blog-app/",
   },
 ];
 
