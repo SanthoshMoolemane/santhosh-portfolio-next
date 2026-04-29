@@ -1,7 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "../components/NavBar";
-import Footer from "../components/Footer"
+import Footer from "../components/Footer";
 import React from "react";
 
 const geistSans = Geist({
@@ -15,18 +15,16 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "My Portfolio",
-  description: "Showcasing my skills and projects",
+  title: "Santhosh Moolemane — Full Stack Developer",
+  description: "Portfolio of Santhosh Moolemane — full stack developer building scalable web experiences with React, Next.js and Node.js.",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <Navbar />
-        <main>{children}</main>
+        <main className="relative" style={{ zIndex: 2 }}>{children}</main>
         <Footer />
       </body>
     </html>
